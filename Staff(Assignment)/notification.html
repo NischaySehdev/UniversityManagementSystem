@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css-files/style.css">
+    <title>Notification</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">IGNOU Officials(Assignment staffs)</a>
+        </div>
+    </nav>
+    <form action="../Backened files/notification.php" method="post">
+        <div class="cont">
+            <div class="mb-3 w-50 bg-secondary text-white p-4 assignblock p-4 b-2" id="block">
+                <div class="mb-3 row">
+                    <label for="Programme" class="col-sm-2 col-form-label">Programme</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="Programme" id="Programme"
+                            required>
+                            <option selected id="myupdateassignProgramm">All</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="Subject" class="col-sm-2 col-form-label">Subject</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="Subject" id="Subject" required>
+                            <option selected id="myupdateassignSubject">All</option>
+                            <option  id="myupdateassignSubject">MCO-01</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="sesion" class="col-sm-2 col-form-label">Title</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control w-100" minlength="5" maxlength="128" id="title"
+                                placeholder="Enter the title of the notification" name="title" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="sesion" class="col-sm-2 col-form-label">Session</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-20">
+                            <input type="number" class="form-control w-100" minlength="4" maxlength="4" id="session"
+                                placeholder="Enter the session or year" name="session" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="session(month)" class="col-sm-2 col-form-label">Session(Month)</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="session(month)"
+                            id="session(month)" required>
+                            <option selected id="myupdateassignMonth">Select</option>
+                            <option id="Janurary">Janurary</option>
+                            <option id="July">July</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="notificationType" class="col-sm-2 col-form-label">Type</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="notificationType"
+                            id="notificationType" required>
+                            <option selected id="myupdateassigntype">Select</option>
+                            <option id="notificationSubmission">Notification submission</option>
+                            <option id="notificationDateExtension">Notification date extension</option>
+                            <option id="notificationOther">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="Other" class="col-sm-2 col-form-label" id="otherReason">Remark</label>
+                    <div class="col-sm-10">
+                        <textarea name="Other" id="Other" cols="77.5" rows="10" name = "remark"  required></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="notificationupload" class="col-sm-2 col-form-label">Assignment
+                        notification(pdf format)</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control col-sm-10" id="notificationupload"
+                            name="notificationupload" required />
+                    </div>
+                </div>
+                <div class="btn-group myforgotbutton">
+                    <div class="w-100">
+                        <button type="reset" class="btn btn-warning w-100">
+                            Reset
+                        </button>
+                    </div>
+                    <div class="w-100">
+                        <button type="submit" class="btn btn-success w-100" id="submitbtn">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <input type="hidden" id="programmeSelected">
+                <input type="hidden" id="subjectSelected">
+                <input type="hidden" id="sessionSelected">
+                <input type="hidden" id="typeSelected">
+            </div>
+        </div>
+        </div>
+    </form>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Serial number</th>
+                    <th scope="col">Notification title</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">View</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="../js-files/constants.js"></script>
+<script src="../js-files/NotificationPanel.js" type="module">
+</script>
+
+</html>

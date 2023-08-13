@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css-files/style.css" />
+    <title>IGNOU Officials(Administrator)</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="staff_designation.php">IGNOU Officials(Staff personal info panel)</a>
+        </div>
+    </nav>
+    <form action="" method="">
+        <div class="cont" >
+            <div class="mb-3 w-50 bg-secondary text-white p-4 assignblock" id="block">
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Programme</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" id="programme" name="Programme">
+                            <option selected id="myStuProgSe">Select</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Study center</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" id="studycenter" name="study_center">
+                            <option selected id="myStuProgSst">Select</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Or</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control w-100" id="study_center"
+                                placeholder="Enter the study center id" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Or</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control w-100" id="enrollement"
+                                placeholder="Enter the enrollement number" />
+                        </div>
+                    </div>
+                </div>
+                <div class="myforgotbutton">
+                    <button type="button" class="btn btn-warning w-100" onclick="">
+                        Reset
+                    </button>
+                    <button type="button" class="btn btn-success w-100" onclick="showstudentperinfo()">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Enrollement number</th>
+                    <th scope="col">Full name</th>
+                    <th scope="col">Programme</th>
+                    <th scope="col">Semster</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Phone number</th>
+                    <th scope="col">Alt. Phone number</th>
+                    <th scope="col">Email id</th>
+                    <th scope="col">Profile picture</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <th scope="row">--</th>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="../js-files/constants.js"></script>
+<script type="module" src="../js-files/StudentPersonalInformationPanel.js"></script>
+<script>
+    // let doneForId = doneForStudyCenter = false
+    // let for_name = document.createElement('div');
+    // for_name.className = "alert alert-danger";
+    // for_name.role = "alert";
+    // for_name.id = "error";
+    // function showstudentperinfo() {
+    //     if (document.getElementById("myStuProgSe").selected) {
+    //         if (document.getElementById("myStuProgSst").selected) {
+    //             if (document.getElementById("staticEmail").value == "") {
+    //                 if (document.getElementById("staticEmail1").value == "") {
+    //                     if(doneForId==false){
+    //                         for_name.innerText="Atleast select any single option.";
+    //                         document.getElementById('block').appendChild(for_name);
+    //                         doneForId=true;
+    //                     }
+    //                 }
+    //                 else if (document.getElementById("staticEmail").value.length != 5) {
+    //                     if (doneForStudyCenter==false) {
+    //                         for_name.innerText="The study center code is always less than 5 numeric.";
+    //                         document.getElementById('block').appendChild(for_name);
+    //                         doneForStudyCenter=true;
+    //                     }
+    //                 } else {
+    //                     alert("Welcome");
+    //                 }
+    //             }
+    //             else if (document.getElementById("staticEmail").value.length != 5) {
+    //                 if (doneForStudyCenter==false) {   
+    //                     for_name.innerText="The study center code is always less than 5 numeric.";
+    //                     document.getElementById('block').appendChild(for_name);
+    //                     doneForStudyCenter=true;
+    //                 }
+    //             }
+    //             else {
+    //                 alert("Welcome");
+    //             }
+    //         }
+    //         else {
+    //             alert("Welcome");
+    //         }
+    //     }
+    //     else {
+    //         alert("Welcome");
+    //     }
+    // }
+    // document.getElementById('enrollement').addEventListener("click", ()=>{
+    //     if (doneForId==true) {
+    //         document.getElementById('error').remove();
+    //         doneForId=false;
+    //     }
+    // })
+    // document.getElementById('study_center').addEventListener("click", ()=>{
+    //     if (doneForId==true) {
+    //         document.getElementById('error').remove();
+    //         doneForId=false;
+    //     }
+    // })
+    // document.getElementById('studycenter').addEventListener("click", ()=>{
+    //     if (doneForId==true) {
+    //         document.getElementById('error').remove();
+    //         doneForId=false;
+    //     }
+    // })
+    // document.getElementById('programme').addEventListener("click", ()=>{
+    //     if (doneForId==true) {
+    //         document.getElementById('error').remove();
+    //         doneForId=false;
+    //     }
+    // })
+</script>
+
+</html>

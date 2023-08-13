@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>IGNOU Officials(Registration management staff)</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index(main[age).html">IGNOU Officials(Registration management staff)</a>
+        </div>
+    </nav>
+    <form action="../Backened files/assignment.php" method="post">
+        <div class="mycontainer">
+            <div class="indexconcern">
+                <div class="col-sm-15">
+                    <select class="form-select" id="Programme" aria-label="Default select example" name="Programme">
+                        <option selected id="programme0">Select the programme</option>
+                    </select>
+                </div>
+                <div class="col-sm-15">
+                    <select class="form-select" id="Subject" aria-label="Default select example" name="subject">
+                        <option selected>Select the subject</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-15">
+                <input type="text" class="form-control-plaintext" width="200px" name="Enrollment_number"
+                    id="search_button" placeholder="Enter the Enrollment number">
+                <button type="submit" class="btn btn-primary" id="search" onclick="submit()">Search</button>
+            </div>
+        </div>
+        <input type="hidden" name="checkForAction" id="checkForAction" value="">
+    </form>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Serial number</th>
+                    <th scope="col">Enrollment no</th>
+                    <th scope="col">Programme</th>
+                    <th scope="col">Fee</th>
+                    <th scope="col">Studymaterial opted</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Email id</th>
+                    <th scope="col">Last update</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <div>
+
+                </div>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+<script src="../js-files/constants.js"></script>
+<script type="module" src="../js-files/RegistrationInformationPanel.js"></script>
+</html>
